@@ -1,15 +1,12 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const { lte } = require("lodash")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const workPost = path.resolve(`./src/templates/work-post.js`)
-
-  
+  //const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPost = path.resolve(`./src/templates/work-post.js`)
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -23,7 +20,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
-              collection
             }
           }
         }
@@ -47,25 +43,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      let postFormat = blogPost
-      if (post.fields.collection == `work`){
-        postFormat = workPost
-      }
-
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
 
       createPage({
         path: post.fields.slug,
-        component: postFormat,
+        component: blogPost,
         context: {
           id: post.id,
           previousPostId,
           nextPostId,
         },
       })
-
-
     })
   }
 }
@@ -81,13 +70,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
-
-    createNodeField({
-      name: `collection`,
-      node,
-      value: getNode(node.parent).sourceInstanceName
-    });
-
   }
 }
 
@@ -125,14 +107,10 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
-      roll: String
-      start: Date @dateformat
-      end: Date @dateformat
     }
 
     type Fields {
       slug: String
-      collection: String
     }
   `)
 }
