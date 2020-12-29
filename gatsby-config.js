@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Portfolio`,
+    title: `PORTFOLIO`,
     author: {
       name: `Harris McCullers`,
       summary: `is a Pitzer College student studying Computer Science at Harvey Mudd College. A talented coder, skilled communicator, and proven leader, Harris is a great addition to any team.`,

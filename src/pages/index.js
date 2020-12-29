@@ -46,7 +46,7 @@ const BlogIndex = ({ data, location }) => {
           return getWorkBody(post)
         })}
       </ol>
-      <h2>Blog</h2>
+      <h2 id="hero">Blog</h2>
       <ol style={{ listStyle: `none` }}>
         {blogPosts.map(post => {
           return getWorkBody(post)
@@ -90,6 +90,7 @@ export const pageQuery = graphql`
 const getWorkBody = (post) => {
   const title = post.frontmatter.title || post.fields.slug
   return (
+
     <li key={post.fields.slug}>
       <article
         className="post-list-item"
@@ -104,7 +105,9 @@ const getWorkBody = (post) => {
           </h2>
           <small>{post.frontmatter.roll}</small>
           <br></br>
-          <small>{post.frontmatter.start} - {post.frontmatter.end}</small>
+          <div class="line-highlight">
+            <small>{post.frontmatter.start} - {post.frontmatter.end}</small>
+          </div>
         </header>
         <section>
           <p
@@ -116,6 +119,7 @@ const getWorkBody = (post) => {
         </section>
       </article>
     </li>
+
   )
 }
 
