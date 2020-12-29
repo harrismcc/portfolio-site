@@ -1,5 +1,5 @@
 /* CSS Custom Properties Definitions */
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,800,900');
 
 
 :root {
@@ -36,7 +36,7 @@
     Times, serif;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
-  --fontWeight-normal: 200;
+  --fontWeight-normal: 100;
   --fontWeight-medium: 300;
   --fontWeight-semibold: 400;
   --fontWeight-bold: 700;
@@ -62,7 +62,7 @@
   --color-heading: #f26b38;
   --color-heading-black: #f26b38;
   --color-accent: #f26b38;
-  --color-body-border: #d46a47;
+  --color-body-border: #28282f;
   --underline-color: #BDCCA3;
   --body-background: #1c1e26;
 }
@@ -362,7 +362,7 @@ a:focus {
     background: var(--color-body-border);
     left: 0;
     right: 0;
-    height: 15px;
+    height: 25px;
   }
   body:before {
     top: 0;
@@ -371,8 +371,8 @@ a:focus {
     bottom: 0;
   }
   body {
-    border-left: 15px solid var(--color-body-border);
-    border-right: 15px solid var(--color-body-border);  
+    border-left: 25px solid var(--color-body-border);
+    border-right: 25px solid var(--color-body-border);  
   }
 }
 
