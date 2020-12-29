@@ -57,6 +57,7 @@
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
   --color-primary: #b83e5c;
+  --color-link: #f26b38;
   --color-text: #eeeeee;
   --color-text-light: #4f5969;
   --color-heading: #f26b38;
@@ -238,7 +239,7 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-primary);
+  color: var(--color-link);
 }
 
 a:hover,
