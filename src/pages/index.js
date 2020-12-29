@@ -74,12 +74,12 @@ export const pageQuery = graphql`
         }
         html
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "MMMM, YYYY")
           title
           description
           roll
-          start
-          end
+          start(formatString: "MMMM, YYYY")
+          end(formatString: "MMMM, YYYY")
         }
       }
     }
@@ -102,8 +102,9 @@ const getWorkBody = (post) => {
               <span itemProp="headline">{title}</span>
             </Link>
           </h2>
-          <small>{post.frontmatter.date}</small>
           <small>{post.frontmatter.roll}</small>
+          <br></br>
+          <small>{post.frontmatter.start} - {post.frontmatter.end}</small>
         </header>
         <section>
           <p
@@ -134,6 +135,7 @@ const getBlogBody = (post) => {
             </Link>
           </h2>
           <small>{post.frontmatter.date}</small>
+
         </header>
         <section>
           <p
