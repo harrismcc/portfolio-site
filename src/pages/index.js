@@ -46,7 +46,7 @@ const BlogIndex = ({ data, location }) => {
           return getWorkBody(post)
         })}
       </ol>
-      <h2>Blog</h2>
+      <h2 id="hero">Blog</h2>
       <ol style={{ listStyle: `none` }}>
         {blogPosts.map(post => {
           return getWorkBody(post)
@@ -74,12 +74,12 @@ export const pageQuery = graphql`
         }
         html
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "MMMM, YYYY")
           title
           description
           roll
-          start
-          end
+          start(formatString: "MMMM, YYYY")
+          end(formatString: "MMMM, YYYY")
         }
       }
     }
@@ -90,6 +90,7 @@ export const pageQuery = graphql`
 const getWorkBody = (post) => {
   const title = post.frontmatter.title || post.fields.slug
   return (
+
     <li key={post.fields.slug}>
       <article
         className="post-list-item"
@@ -102,8 +103,11 @@ const getWorkBody = (post) => {
               <span itemProp="headline">{title}</span>
             </Link>
           </h2>
-          <small>{post.frontmatter.date}</small>
           <small>{post.frontmatter.roll}</small>
+          <br></br>
+          <div class="line-highlight">
+            <small>{post.frontmatter.start} - {post.frontmatter.end}</small>
+          </div>
         </header>
         <section>
           <p
@@ -115,6 +119,7 @@ const getWorkBody = (post) => {
         </section>
       </article>
     </li>
+
   )
 }
 
@@ -134,6 +139,7 @@ const getBlogBody = (post) => {
             </Link>
           </h2>
           <small>{post.frontmatter.date}</small>
+
         </header>
         <section>
           <p

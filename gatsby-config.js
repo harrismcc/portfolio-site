@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Portfolio`,
+    title: `PORTFOLIO`,
     author: {
       name: `Harris McCullers`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      summary: `is a Pitzer College student studying Computer Science at Harvey Mudd College. A talented coder, skilled communicator, and proven leader, Harris is a great addition to any team.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Harris McCullers' Portfolio Page.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `harrismcc`,
