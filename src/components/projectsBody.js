@@ -36,12 +36,7 @@ const ProjectsBody = (props) => {
     
             </header>
             <section>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: post.frontmatter.description || post.html,
-                }}
-                itemProp="description"
-              />
+              <p>{post.frontmatter.description}</p>
             </section>
           </article>
         </li>
