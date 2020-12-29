@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `PORTFOLIO`,
+    title: `HARRIS MCCULLERS - PORTFOLIO`,
     author: {
       name: `Harris McCullers`,
       summary: `is a Pitzer College student studying Computer Science at Harvey Mudd College. A talented coder, skilled communicator, and proven leader, Harris is a great addition to any team.`,
@@ -15,8 +15,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/projects`,
+        name: `projects`,
       },
     },
     {

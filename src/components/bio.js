@@ -8,13 +8,16 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import {useSpring, animated} from 'react-spring'
 
 const Bio = () => {
+
+
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50, quality: 95) {
+          fixed(width: 100, height: 100, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -39,10 +42,27 @@ const Bio = () => {
 
   const avatar = data?.avatar?.childImageSharp?.fixed
 
+
+  const AnimatedImage = animated(Image)
+
+  const [props, set] = useSpring(() => ({minWidth: 50, height: 50, borderRadius: "50%"}))
+  const handleBioHover = () => {
+    set({minWidth: 100, height: 100, borderRadius: "50%"})
+  }
+  const handleBioUnhover = () => {
+    set({minWidth: 50, height: 50, borderRadius: "10%"})
+  }
+
   return (
-    <div className="bio">
+    <div 
+      roll="button"
+      className="bio"
+      onMouseEnter={() => handleBioHover()}
+      onMouseLeave={() => handleBioUnhover()}
+    >
       {avatar && (
-        <Image
+        <AnimatedImage
+          style={props}
           fixed={avatar}
           alt={author?.name || ``}
           className="bio-avatar"
