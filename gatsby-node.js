@@ -1,6 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const { lte } = require("lodash")
+
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -64,6 +64,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nextPostId,
         },
       })
+      
 
 
     })
@@ -125,6 +126,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       roll: String
+      date: Date@dateformat
       start: Date @dateformat
       end: Date @dateformat
     }
