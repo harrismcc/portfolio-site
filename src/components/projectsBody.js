@@ -36,7 +36,7 @@ const ProjectsBody = (props) => {
     
             </header>
             <section>
-              <p
+              <div
                 dangerouslySetInnerHTML={{
                   __html: post.frontmatter.description || post.html,
                 }}
