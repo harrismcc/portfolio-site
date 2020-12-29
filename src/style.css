@@ -59,9 +59,9 @@
   --color-primary: #b83e5c;
   --color-text: #eeeeee;
   --color-text-light: #4f5969;
-  --color-heading: #E0947B;
-  --color-heading-black: #d46a47;
-  --color-accent: #d1dce5;
+  --color-heading: #f26b38;
+  --color-heading-black: #f26b38;
+  --color-accent: #f26b38;
   --color-body-border: #d46a47;
   --underline-color: #BDCCA3;
   --body-background: #1c1e26;
@@ -342,7 +342,7 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
-
+ 
 .line-highlight{
   border-width: 10px;
   border-color: #f26b38;
