@@ -46,12 +46,13 @@ const WorkBody = (props) => {
               </div>
             </header>
             <section>
-              <p
+              <div
                 dangerouslySetInnerHTML={{
                   __html: post.html,
                 }}
                 itemProp="description"
               />
+
             </section>
           </article>
         </li>
