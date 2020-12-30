@@ -1,12 +1,13 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { lte } from "lodash"
+import ProjectsBody from "../components/projectsBody"
+import WorkBody from "../components/workBody"
 
-const path = require(`path`)
+
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -17,15 +18,17 @@ const BlogIndex = ({ data, location }) => {
   posts.map(post => {
     if (post.fields.collection === 'work'){
       workPosts.push(post)
-    } else if (post.fields.collection === 'blog'){
+    } else if (post.fields.collection === 'projects'){
       blogPosts.push(post)
+    } else{
+      console.log(posts.fields.collection)
     }
   })
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="Harris McCullers" />
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -36,20 +39,28 @@ const BlogIndex = ({ data, location }) => {
     )
   }
 
-
+  
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Harris McCullers" />
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {workPosts.map(post => {
-          return getWorkBody(post)
+          return(
+            <WorkBody
+              post={post}
+            />
+            )
         })}
       </ol>
-      <h2 id="hero">Blog</h2>
+      <h2>Projects</h2>
       <ol style={{ listStyle: `none` }}>
         {blogPosts.map(post => {
-          return getWorkBody(post)
+          return(
+            <ProjectsBody
+              post={post}
+            />
+          )
         })}
       </ol>
     </Layout>
@@ -65,7 +76,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___start], order: DESC }) {
       nodes {
         excerpt
         fields {
@@ -74,7 +85,6 @@ export const pageQuery = graphql`
         }
         html
         frontmatter {
-          date(formatString: "MMMM, YYYY")
           title
           description
           roll
@@ -87,69 +97,3 @@ export const pageQuery = graphql`
 `
 
 
-const getWorkBody = (post) => {
-  const title = post.frontmatter.title || post.fields.slug
-  return (
-
-    <li key={post.fields.slug}>
-      <article
-        className="post-list-item"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h2>
-            <Link to={post.fields.slug} itemProp="url">
-              <span itemProp="headline">{title}</span>
-            </Link>
-          </h2>
-          <small>{post.frontmatter.roll}</small>
-          <br></br>
-          <div class="line-highlight">
-            <small>{post.frontmatter.start} - {post.frontmatter.end}</small>
-          </div>
-        </header>
-        <section>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: post.html,
-            }}
-            itemProp="description"
-          />
-        </section>
-      </article>
-    </li>
-
-  )
-}
-
-const getBlogBody = (post) => {
-  const title = post.frontmatter.title || post.fields.slug
-  return (
-    <li key={post.fields.slug}>
-      <article
-        className="post-list-item"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h2>
-            <Link to={post.fields.slug} itemProp="url">
-              <span itemProp="headline">{title}</span>
-            </Link>
-          </h2>
-          <small>{post.frontmatter.date}</small>
-
-        </header>
-        <section>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: post.html,
-            }}
-            itemProp="description"
-          />
-        </section>
-      </article>
-    </li>
-  )
-}
