@@ -380,7 +380,30 @@ a:focus {
     border-left: 25px solid var(--color-body-border);
     border-right: 25px solid var(--color-body-border);  
   }
+
 }
+
+.social-display{
+  text-align: center;
+}
+
+.social-display button{
+  background-color: var(--body-background);
+  color: var(--color-link);
+  border: 1px solid var(--color-link);
+  border-radius: 1px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 100;
+}
+
+.bio-location-tag {
+  font-weight: var(--fontWeight-normal);
+}
+
 
 
 /* Media queries */
@@ -394,4 +417,9 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+
+  .social-display button{
+    width: 75%;
+  }
+
 }
