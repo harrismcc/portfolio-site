@@ -1,8 +1,8 @@
 ---
 title: MagicLinks
 roll: Project/Product Management Intern
-start: "2015-05-06T23:46:37.121Z"
-end: "2015-05-06T23:46:37.121Z"
+start: 2019-05-01T23:46:37.121Z
+end: 2019-09-01T23:46:37.121Z
 ---
 
 Born in 2014, MagicLinks is the fastest-growing video influencer platform, powering social commerce for tens of thousands of the world's leading digital artists. 
