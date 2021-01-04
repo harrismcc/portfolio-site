@@ -166,6 +166,10 @@ h6 > a {
   color: inherit;
 }
 
+
+.category-label {
+  text-align: center;
+}
 /* Prose */
 
 p {
@@ -256,7 +260,7 @@ a:focus {
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
-  margin-bottom: var(--spacing-20);
+  margin-bottom: var(--spacing-12);
 }
 
 .global-header {
@@ -405,6 +409,29 @@ a:focus {
 }
 
 
+.skills-header {
+  padding-bottom: 2px;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  height: 30px;
+  background-color: var(--color-primary);
+  border-top-left-radius: 0.2em;
+  border-top-right-radius: 0.2em;
+}
+
+.skills-box {
+  text-align: center;
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+  background-color: var(--color-body-border);
+  border-width: 1px;
+}
+
+.skills-box p {
+  float: left;
+}
 
 /* Media queries */
 
@@ -420,6 +447,15 @@ a:focus {
 
   .social-display button{
     width: 75%;
+  }
+
+  .skills-header {
+    width: 100%;
+  }
+  
+  .skills-box {
+    width: 100%;
+    font-size: smaller;
   }
 
 }
