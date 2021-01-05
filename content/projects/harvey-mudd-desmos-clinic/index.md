@@ -1,5 +1,5 @@
 ---
-title: Harvey Mudd & Desmos Clinic
+title: Jump to Definition
 date: 2021-01-05T19:31:50.113Z
 start: 2021-01-05T19:31:50.947Z
 description: "The Harvey Mudd Clinic program allows students in their senior
