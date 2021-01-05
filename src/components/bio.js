@@ -97,7 +97,7 @@ const Socials = () => {
           />
           <SocialButton
               buttonText="Resume"
-              src="/img/Harris_McCullers.pdf"
+              src="/img/harris_mccullers.pdf"
           />
           <SocialButton
               buttonText="Email"
