@@ -6,7 +6,7 @@ module.exports = {
       summary: `is a Pitzer College student studying Computer Science at Harvey Mudd College, graduating in May 2021. As a talented coder, skilled communicator, and team-player, Harris is a great addition to any team.`,
     },
     description: `Harris McCullers' Portfolio Page.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://harrismccullers.com/`,
     social: {
       twitter: `harrismcc`,
     },
@@ -60,15 +60,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `G-SQ4WFEHFDG`,
+        head: true,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Harris McCullers Portfolio`,
+        short_name: `Harris`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
