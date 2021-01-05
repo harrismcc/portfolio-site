@@ -6,7 +6,7 @@ const ProjectsBody = (props) => {
     const post = props.post
     const title = post.frontmatter.title || post.fields.slug
 
-    const [itemHoverProps, itemHoverSet] = useSpring(() => ({fontSize: "2rem"}))
+    const [itemHoverProps, itemHoverSet] = useSpring(() => ({fontSize: "2rem", textAlign: 'center'}))
     const handleItemHover = () => {
       itemHoverSet({fontSize: "2.5rem"})
     }

@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import Skills from "../components/skills"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -44,6 +45,10 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Harris McCullers" />
       <Bio />
+	    <Skills />
+      <div className="category-label">
+        <h2>Experience:</h2>
+      </div>
       <ol style={{ listStyle: `none` }}>
         {workPosts.map(post => {
           return(
@@ -53,7 +58,9 @@ const BlogIndex = ({ data, location }) => {
             )
         })}
       </ol>
-      <h2>Projects</h2>
+      <div className="category-label">
+        <h2>Projects:</h2>
+      </div>
       <ol style={{ listStyle: `none` }}>
         {blogPosts.map(post => {
           return(
