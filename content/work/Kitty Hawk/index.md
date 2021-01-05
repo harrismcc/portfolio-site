@@ -1,13 +1,13 @@
 ---
 title: Kitty Hawk
 roll: Software Engineer Intern
-start: "2020-05-06T23:46:37.121Z"
-end: "2020-05-06T23:46:37.121Z"
+start: 2020-05-06T23:46:37.121Z
+end: 2020-05-06T23:46:37.121Z
 ---
 
 *Note: This internship was cut short due to the unexpected cancellation of my team’s project.*
 
-Building powerful electrol VTOL aircraft, and advanced AI to power them, Kitty Hawk hopes to to create the next generation of vehicles for everyday flight. 
+Building powerful electric VTOL aircraft, and advanced AI to power them, Kitty Hawk hopes to to create the next generation of vehicles for everyday flight. 
 
 ###### As a Software Engineering Intern I:
 
