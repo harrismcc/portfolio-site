@@ -3,7 +3,7 @@ module.exports = {
     title: `HARRIS MCCULLERS - PORTFOLIO`,
     author: {
       name: `Harris McCullers`,
-      summary: `is a Pitzer College student studying Computer Science at Harvey Mudd College, graduating in May 2021. As a talented coder, skilled communicator, and proven leader, Harris is a great addition to any team.`,
+      summary: `is a Pitzer College student studying Computer Science at Harvey Mudd College, graduating in May 2021. As a talented coder, skilled communicator, and team-player, Harris is a great addition to any team.`,
     },
     description: `Harris McCullers' Portfolio Page.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
