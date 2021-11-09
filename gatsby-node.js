@@ -126,7 +126,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       roll: String
-      date: Date @dateformat
+      url: String
       start: Date @dateformat
       end: Date @dateformat
     }
