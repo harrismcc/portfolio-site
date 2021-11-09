@@ -49,7 +49,7 @@ export const SocialButton = (props) => {
   
     const [springStyle, set] = useSpring(() => ({paddingLeft: "5px", paddingRight: "5px", letterSpacing: "1px"}))
     const handleMouseEnter = () => {
-      console.log("Enter")
+
       set({paddingLeft: "8px",
             paddingRight: "8px",
             letterSpacing: "2.5px"})

@@ -4,14 +4,10 @@ import {useSpring, animated} from 'react-spring'
 
 const WorkBody = (props) => {
 
-    //super(props)
-    const post = props.post
-    //const title = post.frontmatter.title || post.fields.slug
 
+    const post = props.post
     const {title, description, roll, url, date, start, end, isCurrent} = post.frontmatter
-    console.log(post.frontmatter)
-  
-    
+
     const [itemHoverProps, itemHoverSet] = useSpring(() => ({fontSize: "2rem"}))
     const handleItemHover = () => {
       itemHoverSet({fontSize: "3rem"})

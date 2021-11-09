@@ -22,8 +22,6 @@ const BlogIndex = ({ data, location }) => {
       workPosts.push(post)
     } else if (post.fields.collection === 'projects'){
       blogPosts.push(post)
-    } else{
-      console.log(posts.fields.collection)
     }
   })
 
