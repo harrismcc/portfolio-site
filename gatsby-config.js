@@ -3,13 +3,26 @@ module.exports = {
     title: `HARRIS MCCULLERS - PORTFOLIO`,
     author: {
       name: `Harris McCullers`,
-      summary: `is a Pitzer College student studying Computer Science at Harvey Mudd College, graduating in May 2021. As a talented coder, skilled communicator, and team-player, Harris is a great addition to any team.`,
+      summary: `is a San Francisco based full-stack software engineer. As a talented coder, skilled communicator, and team-player, Harris is a great addition to any team.`,
     },
     description: `Harris McCullers' Portfolio Page.`,
     siteUrl: `https://harrismccullers.com/`,
-    social: {
-      twitter: `harrismcc`,
-    },
+    location: 'San Francisco, California',
+    role: 'Software Engineer',
+    social: [
+      {
+        name: "Github",
+        url: "https://github.com/harrismcc/"
+      },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/harrismccullers/"
+      },
+      {
+        name: "Email",
+        url: "mailto://contact@harrismccullers.com"
+      }
+    ],
   },
   plugins: [
     {

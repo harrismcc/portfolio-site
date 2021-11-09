@@ -1,6 +1,7 @@
 ---
 title: Kitty Hawk
 roll: Software Engineer Intern
+url: https://kittyhawk.aero/
 start: 2020-05-06T23:46:37.121Z
 end: 2020-05-06T23:46:37.121Z
 ---

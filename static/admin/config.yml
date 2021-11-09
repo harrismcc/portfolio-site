@@ -21,6 +21,7 @@ collections:
       - { label: 'Roll Name', name: 'roll', widget: 'string' }
       - { label: 'Start Date', name: 'start', widget: 'datetime' }
       - { label: 'End Date', name: 'end', widget: 'datetime' }
+      - { label: 'Link', name: 'url', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       
   - name: 'projects'

@@ -8,17 +8,22 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import {useSpring, animated} from 'react-spring'
+import {Socials,} from './socials'
+
 
 const Bio = () => {
 
-
+  //https://github.com/gatsbyjs/gatsby/blob/26582d31ab14f7bac6d5738e4245ceca2e6d411d/packages/gatsby-transformer-sharp/src/fragments.js#L6
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
         childImageSharp {
           fixed(width: 100, height: 100, quality: 10) {
-            ...GatsbyImageSharpFixed
+            base64
+            width
+            height
+            src
+            srcSet
           }
         }
       }
@@ -28,19 +33,16 @@ const Bio = () => {
             name
             summary
           }
-          social {
-            twitter
-          }
+          location
+          role
         }
       }
     }
   `)
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
-
   const avatar = data?.avatar?.childImageSharp?.fixed
+  const {author, social, location, role} = data.site.siteMetadata
 
   return (
     <div 
@@ -58,7 +60,7 @@ const Bio = () => {
         />
       )}
       <div>
-        <small className="bio-location-tag">Software Engineer - Los Angeles, California</small>
+        <small className="bio-location-tag">{role} - {location}</small>
         {author?.name && (
           <p>
             <strong>{author.name}</strong> {author?.summary || null}
@@ -73,72 +75,3 @@ const Bio = () => {
 }
 
 export default Bio
-
-
-
-//linkedin link
-// github link
-// email link
-// resume link
-
-const Socials = () => {
-
-  return(
-      <div className="social-display">
-          <SocialButton
-              className="A"
-              buttonText="Github"
-              src="https://github.com/harrismcc/"
-          />
-          <SocialButton
-              className="B"
-              buttonText="LinkedIn"
-              src="https://www.linkedin.com/in/harrismccullers/"
-          />
-          <SocialButton
-              buttonText="Resume"
-              src="/img/harris_mccullers.pdf"
-          />
-          <SocialButton
-              buttonText="Email"
-              src="mailto://harrismccullers@gmail.com"
-          />
-      </div>
-  )
-}
-
-
-const SocialButton = (props) => {
-
-  const handleClick = () => {
-    //window.location.href=props.src;
-    window.open(
-      props.src,
-      '_blank' // <- This is what makes it open in a new window.
-    );
-  }
-
-  const [springStyle, set] = useSpring(() => ({paddingLeft: "5px", paddingRight: "5px", letterSpacing: "1px"}))
-  const handleMouseEnter = () => {
-    console.log("Enter")
-    set({paddingLeft: "8px",
-          paddingRight: "8px",
-          letterSpacing: "2.5px"})
-  }
-  const handleMouseLeave = () => {
-    set({paddingLeft: "5px",
-    paddingRight: "5px",
-    letterSpacing: "1px"})
-  }
-  return(
-      <animated.button 
-        style={springStyle}
-        className="social-button"
-        onClick={handleClick}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-          {props.buttonText}
-      </animated.button>
-  )
-}

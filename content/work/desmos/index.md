@@ -1,6 +1,7 @@
 ---
 title: Desmos
 roll: Software Engineer (HMC Clinic)
+url: https://www.desmos.com/
 start: 2020-09-14T19:06:05.149Z
 end: 2021-05-17T19:06:17.041Z
 ---
