@@ -1,6 +1,7 @@
 ---
 title: MagicLinks
 roll: Project/Product Management Intern
+url: https://www.magiclinks.com/
 start: 2019-05-01T23:46:37.121Z
 end: 2019-09-01T23:46:37.121Z
 ---

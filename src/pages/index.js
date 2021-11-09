@@ -14,6 +14,7 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
+
   let workPosts = []
   let blogPosts = []
   posts.map(post => {
@@ -21,8 +22,6 @@ const BlogIndex = ({ data, location }) => {
       workPosts.push(post)
     } else if (post.fields.collection === 'projects'){
       blogPosts.push(post)
-    } else{
-      console.log(posts.fields.collection)
     }
   })
 
@@ -95,6 +94,7 @@ export const pageQuery = graphql`
           title
           description
           roll
+          url
           start(formatString: "MMMM, YYYY")
           end(formatString: "MMMM, YYYY")
         }
