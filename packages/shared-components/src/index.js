@@ -1,0 +1,7 @@
+//export * from './Bio'
+export * from './Layout'
+export * from './ProjectsBody'
+//export * from './Seo'
+export * from './Skills'
+export * from './Socials'
+export * from './WorkBody'

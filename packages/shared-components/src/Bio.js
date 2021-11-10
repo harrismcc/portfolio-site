@@ -8,11 +8,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import {Socials,} from './socials'
+import { Socials } from '../src/Socials'
 
-
-const Bio = () => {
-
+export const Bio = () => {
   //https://github.com/gatsbyjs/gatsby/blob/26582d31ab14f7bac6d5738e4245ceca2e6d411d/packages/gatsby-transformer-sharp/src/fragments.js#L6
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -73,5 +71,3 @@ const Bio = () => {
     </div>
   )
 }
-
-export default Bio

@@ -2,9 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import {useSpring, animated} from 'react-spring'
 
-const WorkBody = (props) => {
-
-
+export const WorkBody = (props) => {
     const post = props.post
     const {title, description, roll, url, date, start, end, isCurrent} = post.frontmatter
 
@@ -59,5 +57,3 @@ const WorkBody = (props) => {
   
     )
   }
-
-export default WorkBody

@@ -2,7 +2,7 @@ import React, {useState, useEffect, useCallback} from "react"
 import Typist from 'react-typist'
 //import TypistLoop from 'react-typist-loop'
 
-const TypistLoop = (
+export const TypistLoop = (
 { interval = 1000, children },
 ) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,7 +36,7 @@ const TypistLoop = (
 
 
 
-const Skills = () => {
+export const Skills = () => {
 
     const skills = ["Python", "TypeScript", "C/C++", "Git", "Docker", "JavaScript",
         "React", "Node.js", "Java", "Containerization", "mySQL", "Linux"]
@@ -64,7 +64,5 @@ const Skills = () => {
 	    
     )
 }
-
-export default Skills
 
 

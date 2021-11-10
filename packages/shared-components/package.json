@@ -1,0 +1,31 @@
+{
+    "name": "@main/shared-components",
+    "private": true,
+    "description": "",
+    "license": "UNLICENSED",
+    "main": "src/index.js",
+    "version": "0.0.0",
+    "author": "",
+    "dependencies": {
+      "gatsby": "^4.1.2",
+      "gatsby-image": "^3.11.0",
+      "react": "^16.0",
+      "react-dom": "^16.0",
+      "react-helmet": "^6.1.0",
+      "react-spring": "^9.3.0",
+      "react-typist": "^2.0.5"
+    },
+    "devDependencies": {
+      "prettier": "2.4.1"
+    },
+    "scripts": {
+      "build": "gatsby build",
+      "develop": "gatsby develop",
+      "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+      "start": "npm run develop",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean",
+      "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    }
+  }
+  

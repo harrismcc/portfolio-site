@@ -1,45 +1,15 @@
 {
-  "name": "gatsby-starter-blog",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
-  "dependencies": {
-    "gatsby": "^4.1.2",
-    "gatsby-image": "^3.11.0",
-    "gatsby-plugin-feed": "^4.1.1",
-    "gatsby-plugin-google-analytics": "^4.1.0",
-    "gatsby-plugin-manifest": "^4.1.1",
-    "gatsby-plugin-netlify-cms": "^6.1.0",
-    "gatsby-plugin-offline": "^5.1.1",
-    "gatsby-plugin-react-helmet": "^5.1.0",
-    "gatsby-plugin-sharp": "^4.1.1",
-    "gatsby-remark-copy-linked-files": "^5.1.0",
-    "gatsby-remark-images": "^6.1.1",
-    "gatsby-remark-prismjs": "^6.1.0",
-    "gatsby-remark-responsive-iframe": "^5.1.0",
-    "gatsby-remark-smartypants": "^5.1.0",
-    "gatsby-source-filesystem": "^4.1.0",
-    "gatsby-transformer-remark": "^5.1.1",
-    "gatsby-transformer-sharp": "^4.1.0",
-    "netlify-cms-app": "^2.14.8",
-    "prismjs": "^1.22.0",
-    "react": "^16.0",
-    "react-dom": "^16.0",
-    "react-helmet": "^6.1.0",
-    "react-lineto": "^3.2.0",
-    "react-spring": "^9.3.0",
-    "react-typist": "^2.0.5",
-    "react-typist-loop": "1.0.0",
-    "typeface-merriweather": "1.1.13",
-    "typeface-montserrat": "1.1.13"
-  },
-  "devDependencies": {
-    "prettier": "2.4.1"
-  },
+    "name": "@main/main",
+    "private": true,
+    "description": "A starter for a blog powered by Gatsby and Markdown",
+    "version": "0.1.0",
+    "author": "Harris McCullers <contact@harrismccullers.com>",
+    "workspaces": [
+        "packages/*"
+    ],
+    "bugs": {
+      "url": "https://github.com/gatsbyjs/gatsby/issues"
+    },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"
@@ -50,13 +20,14 @@
     "type": "git",
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "scripts": {
+      "build": "yarn workspace @main/portfolio-site-react build",
+      "develop": "yarn workspace @main/portfolio-site-react develop",
+      "format": "yarn workspace @main/portfolio-site-react format && yarn @main/shared-components format",
+      "start": "yarn workspace @main/portfolio-site-react start",
+      "serve": "yarn workspace @main/portfolio-site-react serve",
+      "clean": "yarn cache clean && yarn workspace @main/portfolio-site-react clean",
+      "test": "yarn workspace @main/portfolio-site-react test && yarn @main/shared-components test"
+    }
   }
-}
+  

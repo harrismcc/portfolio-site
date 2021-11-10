@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 export default function HTML(props) {
   return (
@@ -40,6 +39,7 @@ export default function HTML(props) {
   )
 }
 
+/*
 HTML.propTypes = {
   htmlAttributes: PropTypes.object,
   headComponents: PropTypes.array,
@@ -48,3 +48,4 @@ HTML.propTypes = {
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
 }
+*/

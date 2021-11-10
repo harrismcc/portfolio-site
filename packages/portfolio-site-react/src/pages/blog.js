@@ -1,22 +1,28 @@
-import React from "react"
+import React, {useState} from "react"
 import { graphql } from "gatsby"
 
-import Skills from "../components/skills"
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import ProjectsBody from "../components/projectsBody"
-import WorkBody from "../components/workBody"
-
-
+import {
+  Bio,
+  Layout,
+  SEO,
+  ProjectsBody
+} from '@main/shared-components'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const posts = data.allMarkdownRemark.nodes.filter((post) => post.fields.collection !== 'work')
 
-
-  const workPosts = posts.filter((post) => post.fields.collection === 'work')
-  const blogPosts = posts.filter((post) => post.fields.collection === 'projects')
+  // Pagination
+  const [page, setPage] = useState(1);
+  const pageSize = 10;
+  const numPages = Math.ceil(posts.length / pageSize)
+  const paginate  = (array) => {
+    return array.slice(
+      (page - 1) * pageSize,
+      page !== numPages ? 
+        page * pageSize : page.length
+    );
+  }
 
   if (posts.length === 0) {
     return (
@@ -31,29 +37,16 @@ const BlogIndex = ({ data, location }) => {
       </Layout>
     )
   }
-  
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Harris McCullers" />
       <Bio />
-	    <Skills />
-      <div className="category-label">
-        <h2>Experience:</h2>
-      </div>
-      <ol style={{ listStyle: `none` }}>
-        {workPosts.map(post => {
-          return(
-            <WorkBody
-              post={post}
-            />
-            )
-        })}
-      </ol>
       <div className="category-label">
         <h2>Projects:</h2>
       </div>
       <ol style={{ listStyle: `none` }}>
-        {blogPosts.slice(0, 3).map(post => {
+        {paginate(posts).map(post => {
           return(
             <ProjectsBody
               post={post}
@@ -61,6 +54,32 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      <nav className="blog-post-nav">
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {page !== 1 && (
+              <a onClick={() => setPage(page - 1)}>
+                ← Previous
+              </a>
+            )}
+          </li>
+          <li>
+            {page !== numPages && (
+              <a onClick={() => setPage(page + 1)}>
+                {page === 1 ? 'See More' : 'Next'} →
+              </a>
+            )}
+          </li>
+        </ul>
+      </nav>
     </Layout>
   )
 }

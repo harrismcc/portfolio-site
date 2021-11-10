@@ -1,9 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import {
+  Bio,
+  Layout,
+  SEO
+} from '@main/shared-components'
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -63,9 +65,9 @@ const BlogPostTemplate = ({ data, location }) => {
     </Layout>
   )
 }
-
 export default BlogPostTemplate
 
+/*
 export const pageQuery = graphql`
   query BlogPostBySlug(
     $id: String!
@@ -105,3 +107,4 @@ export const pageQuery = graphql`
     }
   }
 `
+*/

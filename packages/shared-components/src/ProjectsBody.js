@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import {useSpring, animated} from 'react-spring'
 
-const ProjectsBody = (props) => {
+export const ProjectsBody = (props) => {
     const post = props.post
     const title = post.frontmatter.title || post.fields.slug
 
@@ -43,5 +43,3 @@ const ProjectsBody = (props) => {
       </div>
     )
   }
-
-export default ProjectsBody

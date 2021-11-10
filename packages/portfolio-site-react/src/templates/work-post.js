@@ -1,9 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import {
+  Bio,
+  Layout,
+  SEO
+} from '@main/shared-components'
 
 const WorkPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -68,7 +70,7 @@ const WorkPostTemplate = ({ data, location }) => {
 
 export default WorkPostTemplate
 
-
+/*
 //This is defining the query for the page
 export const pageQuery = graphql`
   query WorkPostBySlug(
@@ -111,3 +113,4 @@ export const pageQuery = graphql`
     }
   }
 `
+*/
