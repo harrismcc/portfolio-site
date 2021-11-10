@@ -1,6 +1,6 @@
 ---
 title: Prediction Widget
-start: "2019-07-28T22:40:32.169Z"
+start: '2019-07-28T22:40:32.169Z'
 description: I worked on this project as part of my internship at MagicLinks. The idea was to have a way for potential users (and current ones) to be able to predict how much income they could be making on the platform. I was in charge of the project from conception to completion, working both as the project and project manager.
 ---
 

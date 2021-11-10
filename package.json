@@ -23,7 +23,7 @@
     "scripts": {
       "build": "yarn workspace @main/portfolio-site-react build",
       "develop": "yarn workspace @main/portfolio-site-react develop",
-      "format": "yarn workspace @main/portfolio-site-react format && yarn @main/shared-components format",
+      "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
       "start": "yarn workspace @main/portfolio-site-react start",
       "serve": "yarn workspace @main/portfolio-site-react serve",
       "clean": "yarn cache clean && yarn workspace @main/portfolio-site-react clean",

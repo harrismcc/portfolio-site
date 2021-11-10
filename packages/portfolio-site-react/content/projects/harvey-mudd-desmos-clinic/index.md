@@ -2,14 +2,15 @@
 title: Jump to Definition
 date: 2021-01-05T19:31:50.113Z
 start: 2021-01-05T19:31:50.947Z
-description: "The Harvey Mudd Clinic program allows students in their senior
+description: 'The Harvey Mudd Clinic program allows students in their senior
   year to work on a solutions to real-world, technical problems for industrial
   clients. My clinic project was with Desmos, a free math education platform.
   Our Goal: To make  their teacher-facing scripting language, Computation Layer,
   easier to use for teachers and the internal Desmos activity team by
   implementing a series of new Language Features, IDE enhancements, and Overall
-  Usability Features."
+  Usability Features.'
 ---
+
 The [Harvey Mudd Clinic](https://www.hmc.edu/clinic/) program allows students in their senior year to work on a solutions to real-world, technical problems for industrial clients. My clinic project was with [Desmos](https://www.desmos.com/about), a free math education platform, working on their teacher-facing scripting language 'Computation Layer'.
 
 ## Activity Builder
@@ -28,7 +29,7 @@ Over the course of the Clinic, our team hopes to complete a number of projects t
 
 Our team worked on Jump to Definition in the fall, successfully creating a working prototype. This feature allows the user to quickly jump to the definition of a variable or component. Using the key combination of control + d and cursor location they are able to go to the definition location of the variable their cursor is on.
 
-![Jump To Def](jumptodef_1.png "Jump To Def")
+![Jump To Def](jumptodef_1.png 'Jump To Def')
 
 In order to complete this project, our implementation had to reach into the Abstract Syntax Tree of the parser to store and retrieve variable and component declarations and uses, as well as their positions in the editor window.
 

@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 export default function HTML(props) {
   return (
@@ -10,7 +10,10 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQ4WFEHFDG"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-SQ4WFEHFDG"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -22,7 +25,6 @@ export default function HTML(props) {
                 `,
           }}
         />
-
 
         {props.headComponents}
       </head>
@@ -36,7 +38,7 @@ export default function HTML(props) {
         {props.postBodyComponents}
       </body>
     </html>
-  )
+  );
 }
 
 /*

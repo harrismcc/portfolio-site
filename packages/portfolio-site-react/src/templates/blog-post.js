@@ -1,16 +1,14 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import {
-  Bio,
-  Layout,
-  SEO
-} from '@main/shared-components'
+import { Layout } from '@main/shared-components';
+import { Bio } from '../components/Bio';
+import { SEO } from '../components/Seo';
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+  const post = data.markdownRemark;
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const { previous, next } = data;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -63,11 +61,10 @@ const BlogPostTemplate = ({ data, location }) => {
         </ul>
       </nav>
     </Layout>
-  )
-}
-export default BlogPostTemplate
+  );
+};
+export default BlogPostTemplate;
 
-/*
 export const pageQuery = graphql`
   query BlogPostBySlug(
     $id: String!
@@ -106,5 +103,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-*/
+`;

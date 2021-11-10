@@ -1,16 +1,14 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import {
-  Bio,
-  Layout,
-  SEO
-} from '@main/shared-components'
+import { Layout } from '@main/shared-components';
+import { Bio } from '../components/Bio';
+import { SEO } from '../components/Seo';
 
 const WorkPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+  const post = data.markdownRemark;
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const { previous, next } = data;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -24,10 +22,8 @@ const WorkPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-            
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.start}</p>
-          
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -65,12 +61,11 @@ const WorkPostTemplate = ({ data, location }) => {
         </ul>
       </nav>
     </Layout>
-  )
-}
+  );
+};
 
-export default WorkPostTemplate
+export default WorkPostTemplate;
 
-/*
 //This is defining the query for the page
 export const pageQuery = graphql`
   query WorkPostBySlug(
@@ -112,5 +107,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-*/
+`;

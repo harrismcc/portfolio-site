@@ -1,13 +1,11 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import {
-  Layout,
-  SEO
-} from '@main/shared-components'
+import { Layout } from '@main/shared-components';
+import { SEO } from '../components/Seo';
 
 const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+  const siteTitle = data.site.siteMetadata.title;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -15,10 +13,10 @@ const NotFoundPage = ({ data, location }) => {
       <h1>404: Not Found</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Layout>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
 export const pageQuery = graphql`
   query {
@@ -28,4 +26,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

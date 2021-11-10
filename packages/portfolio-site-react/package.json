@@ -2,7 +2,7 @@
   "name": "@main/portfolio-site-react",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "author": "Harris McCullers <contact@harrismccullers.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"

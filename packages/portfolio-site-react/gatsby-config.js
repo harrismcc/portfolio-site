@@ -11,17 +11,17 @@ module.exports = {
     role: 'Software Engineer',
     social: [
       {
-        name: "Github",
-        url: "https://github.com/harrismcc/"
+        name: 'Github',
+        url: 'https://github.com/harrismcc/',
       },
       {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/harrismccullers/"
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/harrismccullers/',
       },
       {
-        name: "Email",
-        url: "mailto://contact@harrismccullers.com"
-      }
+        name: 'Email',
+        url: 'mailto://contact@harrismccullers.com',
+      },
     ],
   },
   plugins: [
@@ -73,7 +73,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `G-SQ4WFEHFDG`
+        trackingId: `G-SQ4WFEHFDG`,
       },
     },
     {
@@ -92,6 +92,6 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-     `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
-}
+};

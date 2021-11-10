@@ -1,22 +1,23 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
 import {
   Skills,
-  Bio,
   Layout,
-  SEO,
   ProjectsBody,
-  WorkBody
-} from '@main/shared-components'
+  WorkBody,
+} from '@main/shared-components';
+import { Bio } from '../components/Bio';
+import { SEO } from '../components/Seo';
 
 const PortfolioIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const posts = data.allMarkdownRemark.nodes;
 
-
-  const workPosts = posts.filter((post) => post.fields.collection === 'work')
-  const blogPosts = posts.filter((post) => post.fields.collection === 'projects')
+  const workPosts = posts.filter((post) => post.fields.collection === 'work');
+  const blogPosts = posts.filter(
+    (post) => post.fields.collection === 'projects',
+  );
   const displayedBlogPosts = 2;
 
   if (posts.length === 0) {
@@ -30,36 +31,28 @@ const PortfolioIndex = ({ data, location }) => {
           gatsby-config.js).
         </p>
       </Layout>
-    )
+    );
   }
-  
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Harris McCullers" />
       <Bio />
-	    <Skills />
+      <Skills />
       <div className="category-label">
         <h2>Experience:</h2>
       </div>
       <ol style={{ listStyle: `none` }}>
-        {workPosts.map(post => {
-          return(
-            <WorkBody
-              post={post}
-            />
-            )
+        {workPosts.map((post) => {
+          return <WorkBody post={post} />;
         })}
       </ol>
       <div className="category-label">
         <h2>Projects:</h2>
       </div>
       <ol style={{ listStyle: `none` }}>
-        {blogPosts.slice(0, displayedBlogPosts).map(post => {
-          return(
-            <ProjectsBody
-              post={post}
-            />
-          )
+        {blogPosts.slice(0, displayedBlogPosts).map((post) => {
+          return <ProjectsBody post={post} />;
         })}
       </ol>
       {blogPosts.length > displayedBlogPosts && (
@@ -68,10 +61,10 @@ const PortfolioIndex = ({ data, location }) => {
         </Link>
       )}
     </Layout>
-  )
-}
+  );
+};
 
-export default PortfolioIndex
+export default PortfolioIndex;
 
 export const pageQuery = graphql`
   query {
@@ -99,6 +92,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-
-
+`;

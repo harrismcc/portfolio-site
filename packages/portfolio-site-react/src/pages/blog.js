@@ -1,28 +1,26 @@
-import React, {useState} from "react"
-import { graphql } from "gatsby"
+import React, { useState } from 'react';
+import { graphql } from 'gatsby';
 
-import {
-  Bio,
-  Layout,
-  SEO,
-  ProjectsBody
-} from '@main/shared-components'
+import { Layout, ProjectsBody } from '@main/shared-components';
+import { Bio } from '../components/Bio';
+import { SEO } from '../components/Seo';
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes.filter((post) => post.fields.collection !== 'work')
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const posts = data.allMarkdownRemark.nodes.filter(
+    (post) => post.fields.collection !== 'work',
+  );
 
   // Pagination
   const [page, setPage] = useState(1);
   const pageSize = 10;
-  const numPages = Math.ceil(posts.length / pageSize)
-  const paginate  = (array) => {
+  const numPages = Math.ceil(posts.length / pageSize);
+  const paginate = (array) => {
     return array.slice(
       (page - 1) * pageSize,
-      page !== numPages ? 
-        page * pageSize : page.length
+      page !== numPages ? page * pageSize : page.length,
     );
-  }
+  };
 
   if (posts.length === 0) {
     return (
@@ -35,7 +33,7 @@ const BlogIndex = ({ data, location }) => {
           gatsby-config.js).
         </p>
       </Layout>
-    )
+    );
   }
 
   return (
@@ -46,12 +44,8 @@ const BlogIndex = ({ data, location }) => {
         <h2>Projects:</h2>
       </div>
       <ol style={{ listStyle: `none` }}>
-        {paginate(posts).map(post => {
-          return(
-            <ProjectsBody
-              post={post}
-            />
-          )
+        {paginate(posts).map((post) => {
+          return <ProjectsBody post={post} />;
         })}
       </ol>
       <nav className="blog-post-nav">
@@ -65,11 +59,7 @@ const BlogIndex = ({ data, location }) => {
           }}
         >
           <li>
-            {page !== 1 && (
-              <a onClick={() => setPage(page - 1)}>
-                ← Previous
-              </a>
-            )}
+            {page !== 1 && <a onClick={() => setPage(page - 1)}>← Previous</a>}
           </li>
           <li>
             {page !== numPages && (
@@ -81,10 +71,10 @@ const BlogIndex = ({ data, location }) => {
         </ul>
       </nav>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -112,6 +102,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-
-
+`;
