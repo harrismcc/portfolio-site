@@ -40,6 +40,7 @@
     "react-spring": "^9.3.0",
     "react-typist": "^2.0.5",
     "react-typist-loop": "1.0.0",
+    "styled-components": "^5.3.3",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13"
   },

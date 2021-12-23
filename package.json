@@ -1,15 +1,15 @@
 {
-    "name": "@main/main",
-    "private": true,
-    "description": "A starter for a blog powered by Gatsby and Markdown",
-    "version": "0.1.0",
-    "author": "Harris McCullers <contact@harrismccullers.com>",
-    "workspaces": [
-        "packages/*"
-    ],
-    "bugs": {
-      "url": "https://github.com/gatsbyjs/gatsby/issues"
-    },
+  "name": "@main/main",
+  "private": true,
+  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "version": "0.1.0",
+  "author": "Harris McCullers <contact@harrismccullers.com>",
+  "workspaces": [
+    "packages/*"
+  ],
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"
@@ -20,14 +20,16 @@
     "type": "git",
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
-    "scripts": {
-      "build": "yarn workspace @main/portfolio-site-react build",
-      "develop": "yarn workspace @main/portfolio-site-react develop",
-      "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-      "start": "yarn workspace @main/portfolio-site-react start",
-      "serve": "yarn workspace @main/portfolio-site-react serve",
-      "clean": "yarn cache clean && yarn workspace @main/portfolio-site-react clean",
-      "test": "yarn workspace @main/portfolio-site-react test && yarn @main/shared-components test"
-    }
+  "scripts": {
+    "build": "yarn workspace @main/portfolio-site-react build",
+    "develop": "yarn workspace @main/portfolio-site-react develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "yarn workspace @main/portfolio-site-react start",
+    "serve": "yarn workspace @main/portfolio-site-react serve",
+    "clean": "yarn cache clean && yarn workspace @main/portfolio-site-react clean",
+    "test": "yarn workspace @main/portfolio-site-react test && yarn @main/shared-components test"
+  },
+  "devDependencies": {
+    "lint-staged": "^11.2.6"
   }
-  
+}
