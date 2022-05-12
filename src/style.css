@@ -88,7 +88,7 @@ body {
   font-size: var(--fontSize-1);
   color: var(--color-text);
   background-color: var(--body-background);
-  
+
 }
 
 footer {
@@ -133,7 +133,7 @@ h1 {
 
 h2 {
   font-size: var(--fontSize-5);
-  
+
 }
 
 h3 {
@@ -336,7 +336,10 @@ a:focus {
     -moz-box-shadow: inset 0 -6px 0px var(--underline-color);
     -webkit-box-shadow: inset 0 -6px 0px var(--underline-color);
     -khtml-box-shadow: inset 0 -6px 0px var(--underline-color);
-  
+}
+
+.blog-post img {
+  max-width: 100%;
 }
 
 .blog-post header p {
@@ -352,7 +355,7 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
- 
+
 .line-highlight{
   border-width: 10px;
   border-color: #f26b38;
@@ -382,7 +385,7 @@ a:focus {
   }
   body {
     border-left: 25px solid var(--color-body-border);
-    border-right: 25px solid var(--color-body-border);  
+    border-right: 25px solid var(--color-body-border);
   }
 
 }
@@ -452,7 +455,7 @@ a:focus {
   .skills-header {
     width: 100%;
   }
-  
+
   .skills-box {
     width: 100%;
     font-size: smaller;
