@@ -8,8 +8,7 @@ import SEO from "../components/seo"
 const WorkPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
-
+  const { previous, next } = data;
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -22,10 +21,8 @@ const WorkPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-            
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.start}</p>
-          
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}

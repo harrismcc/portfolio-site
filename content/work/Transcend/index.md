@@ -2,7 +2,7 @@
 title: Transcend
 roll: Software Engineer - DPI Team
 start: 2021-09-01T19:06:05.149Z
-end: 2022-03-18T17:12:31.003Z
+end:
 url: https://transcend.io/
 ---
 ###### As a member of the Transcend Data Privacy Infrastructure team I:
