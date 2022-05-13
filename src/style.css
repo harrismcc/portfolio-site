@@ -36,9 +36,9 @@
     Times, serif;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
-  --fontWeight-normal: 100;
-  --fontWeight-medium: 300;
-  --fontWeight-semibold: 400;
+  --fontWeight-normal: 300;
+  --fontWeight-medium: 400;
+  --fontWeight-semibold: 500;
   --fontWeight-bold: 700;
   --fontWeight-extrabold: 800;
   --fontWeight-black: 900;

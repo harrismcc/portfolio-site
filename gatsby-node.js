@@ -1,15 +1,12 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const workPost = path.resolve(`./src/templates/work-post.js`)
-
-  
+  const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const workPost = path.resolve(`./src/templates/work-post.tsx`)
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -48,7 +45,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       let postFormat = blogPost
-      if (post.fields.collection == `work`){
+      if (post.fields.collection == `work`) {
         postFormat = workPost
       }
 
@@ -64,9 +61,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nextPostId,
         },
       })
-      
-
-
     })
   }
 }
@@ -86,9 +80,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `collection`,
       node,
-      value: getNode(node.parent).sourceInstanceName
-    });
-
+      value: getNode(node.parent).sourceInstanceName,
+    })
   }
 }
 
@@ -103,16 +96,16 @@ exports.createSchemaCustomization = ({ actions }) => {
   // blog posts are stored inside "content/blog" instead of returning an error
   createTypes(`
     type SiteSiteMetadata {
-      author: Author
-      siteUrl: String
-      social: [Social]
-      location: String
-      role: String
+      author: Author!
+      siteUrl: String!
+      social: [Social!]!
+      location: String!
+      role: String!
     }
 
     type Author {
-      name: String
-      summary: String
+      name: String!
+      summary: String!
     }
 
     type Social {
@@ -121,8 +114,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-      fields: Fields
+      frontmatter: Frontmatter!
+      fields: Fields!
     }
 
     type Frontmatter {
@@ -139,4 +132,17 @@ exports.createSchemaCustomization = ({ actions }) => {
       collection: String
     }
   `)
+}
+
+/**
+ * @param root0
+ */
+exports.onCreateWebpackConfig = function ({ actions }) {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@main": path.resolve(__dirname, "src"),
+      },
+    },
+  })
 }

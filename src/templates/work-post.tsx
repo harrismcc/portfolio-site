@@ -1,32 +1,39 @@
+import { Bio, Layout, SEO } from "@main/components"
+import { WorkPostBySlugQuery } from "@main/graphql-types"
+import { graphql, Link, PageProps } from "gatsby"
 import React from "react"
-import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
-const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+/* eslint-disable react/no-danger */
+const WorkPostTemplate: React.FC<PageProps<WorkPostBySlugQuery>> = ({
+  data: {
+    site: {
+      siteMetadata: { title: siteTitle },
+    },
+    markdownRemark: {
+      html,
+      frontmatter: { title, start, description },
+    },
+    ...data
+  },
+}) => {
+  // Convert all null to undefined
+  const previous = data.previous ?? undefined
+  const next = data.next ?? undefined
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+    <Layout title={siteTitle}>
+      <SEO title={title} description={description} />
       <article
-        className="blog-post"
+        className="work-post"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.start}</p>
+          <h1 itemProp="headline">{title}</h1>
+          <p>{start}</p>
         </header>
         <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          dangerouslySetInnerHTML={{ __html: html }}
           itemProp="articleBody"
         />
         <hr />
@@ -34,7 +41,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <Bio />
         </footer>
       </article>
-      <nav className="blog-post-nav">
+      <nav className="work-post-nav">
         <ul
           style={{
             display: `flex`,
@@ -45,15 +52,15 @@ const BlogPostTemplate = ({ data, location }) => {
           }}
         >
           <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+            {previous && previous.fields && previous.frontmatter && (
+              <Link to={previous.fields.slug as string} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
+            {next && next.fields && next.frontmatter && (
+              <Link to={next.fields.slug as string} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -63,11 +70,13 @@ const BlogPostTemplate = ({ data, location }) => {
     </Layout>
   )
 }
+/* eslint-enable react/no-danger */
 
-export default BlogPostTemplate
+export default WorkPostTemplate
 
+// This is defining the query for the page
 export const pageQuery = graphql`
-  query BlogPostBySlug(
+  query WorkPostBySlug(
     $id: String!
     $previousPostId: String
     $nextPostId: String
@@ -83,8 +92,10 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        start(formatString: "MMMM DD, YYYY")
         description
+        roll
+        start(formatString: "MMMM DD, YYYY")
+        end(formatString: "MMMM DD, YYYY")
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
