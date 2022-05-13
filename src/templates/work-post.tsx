@@ -13,59 +13,63 @@ const WorkPostTemplate: React.FC<PageProps<WorkPostBySlugQuery>> = ({
       html,
       frontmatter: { title, start, description },
     },
-    previous: { ...previous },
-    next: { ...next },
+    ...data
   },
-  location,
-}) => (
-  <Layout title={siteTitle}>
-    <SEO title={title} description={description} />
-    <article
-      className="work-post"
-      itemScope
-      itemType="http://schema.org/Article"
-    >
-      <header>
-        <h1 itemProp="headline">{title}</h1>
-        <p>{start}</p>
-      </header>
-      <section
-        dangerouslySetInnerHTML={{ __html: html }}
-        itemProp="articleBody"
-      />
-      <hr />
-      <footer>
-        <Bio />
-      </footer>
-    </article>
-    <nav className="work-post-nav">
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
+}) => {
+  // Convert all null to undefined
+  const previous = data.previous ?? undefined
+  const next = data.next ?? undefined
+
+  return (
+    <Layout title={siteTitle}>
+      <SEO title={title} description={description} />
+      <article
+        className="work-post"
+        itemScope
+        itemType="http://schema.org/Article"
       >
-        <li>
-          {previous && previous.fields && previous.frontmatter && (
-            <Link to={previous.fields.slug as string} rel="prev">
-              ← {previous.frontmatter.title}
-            </Link>
-          )}
-        </li>
-        <li>
-          {next && next.fields && next.frontmatter && (
-            <Link to={next.fields.slug as string} rel="next">
-              {next.frontmatter.title} →
-            </Link>
-          )}
-        </li>
-      </ul>
-    </nav>
-  </Layout>
-)
+        <header>
+          <h1 itemProp="headline">{title}</h1>
+          <p>{start}</p>
+        </header>
+        <section
+          dangerouslySetInnerHTML={{ __html: html }}
+          itemProp="articleBody"
+        />
+        <hr />
+        <footer>
+          <Bio />
+        </footer>
+      </article>
+      <nav className="work-post-nav">
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {previous && previous.fields && previous.frontmatter && (
+              <Link to={previous.fields.slug as string} rel="prev">
+                ← {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && next.fields && next.frontmatter && (
+              <Link to={next.fields.slug as string} rel="next">
+                {next.frontmatter.title} →
+              </Link>
+            )}
+          </li>
+        </ul>
+      </nav>
+    </Layout>
+  )
+}
 /* eslint-enable react/no-danger */
 
 export default WorkPostTemplate
