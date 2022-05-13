@@ -15,22 +15,18 @@ export const Layout: React.FC<LayoutProps> = ({
   title,
   children,
 }) => {
-  let header
-  if (titleHeader) {
-    header = (
-      <div>
-        <h1>
-          <Link to="/">{title}</Link>
-        </h1>
-      </div>
-    )
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
-  }
+  console.log(titleHeader)
+  const header = titleHeader ? (
+    <div>
+      <h1>
+        <Link to="/">{title}</Link>
+      </h1>
+    </div>
+  ) : (
+    <Link className="header-link-home" to="/">
+      {title}
+    </Link>
+  )
 
   return (
     <div className="global-wrapper" data-is-root-path={titleHeader}>

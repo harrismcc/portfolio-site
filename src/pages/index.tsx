@@ -39,7 +39,7 @@ const BlogIndex: React.FC<PageProps<FrontPageQuery>> = ({ data }) => {
   }
 
   return (
-    <Layout title={siteTitle}>
+    <Layout titleHeader title={siteTitle}>
       <SEO title="Harris McCullers" />
       <Bio />
       <Skills />
