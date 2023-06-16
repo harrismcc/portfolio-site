@@ -1,7 +1,7 @@
 import { BioSocialsQueryQuery } from "@main/graphql-types"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import { animated, useSpring } from "react-spring"
+import { animated, useSpring } from "@react-spring/web"
 
 export const Socials: React.FC = () => {
   const {
@@ -48,20 +48,22 @@ export const SocialButton: React.FC<SocialButtonProps> = ({
   }))
 
   return (
-    <animated.button
+    <animated.a
       style={springStyle}
       className="social-button"
-      onClick={() => {
-        window.open(src, "_blank")
-      }}
+      href={src}
+      // onClick={() => {
+      //   window.open(src, "_blank")
+      // }}
       onMouseEnter={() => {
         set({ paddingLeft: "8px", paddingRight: "8px", letterSpacing: "2.5px" })
       }}
       onMouseLeave={() => {
         set({ paddingLeft: "5px", paddingRight: "5px", letterSpacing: "1px" })
       }}
+      rel="me"
     >
       {buttonText}
-    </animated.button>
+    </animated.a>
   )
 }

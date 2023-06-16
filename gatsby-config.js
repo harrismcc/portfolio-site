@@ -5,11 +5,11 @@ module.exports = {
     title: `HARRIS MCCULLERS - PORTFOLIO`,
     author: {
       name: `Harris McCullers`,
-      summary: `is a San Francisco based full-stack software engineer. As a talented coder, skilled communicator, and team-player, Harris is a great addition to any team.`,
+      summary: `is a Bay Area based full-stack software engineer. As a talented coder, skilled communicator, and team-player, Harris is a great addition to any team.`,
     },
     description: `Harris McCullers' Portfolio Page.`,
     siteUrl: `https://harrismccullers.com/`,
-    location: "San Francisco, California",
+    location: "Oakland, California",
     role: "Software Engineer",
     social: [
       {
@@ -19,6 +19,10 @@ module.exports = {
       {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/harrismccullers/",
+      },
+      {
+        name: "Mastodon",
+        url: "https://fosstodon.org/@nopersonalspace",
       },
       {
         name: "Email",

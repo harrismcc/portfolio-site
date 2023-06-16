@@ -48,19 +48,17 @@ const TypistLoop: ({
 
 export const Skills: React.FC = () => {
   const skills = [
-    "Python",
     "TypeScript",
-    "C/C++",
-    "Git",
-    "Docker",
-    "JavaScript",
     "React",
-    "Node.js",
-    "Java",
-    "Containerization",
-    "mySQL",
-    "Linux",
+    "SQL",
+    "CSS",
+    "GraphQL",
+    "API Integrations",
+    "Customer Communication",
+    "Bug Triaging",
   ]
+
+  const displayed = []
 
   return (
     <div>
@@ -72,14 +70,11 @@ export const Skills: React.FC = () => {
         <p>:</p>
         <p style={{ color: "#2A5183" }}>~</p>
         <p>$ </p>
-        <TypistLoop interval={800}>
-          {skills.map(text => (
-            <Typist key={text} startDelay={100}>
-              {text}
-              <Typist.Backspace count={text.length} delay={500} />
-            </Typist>
-          ))}
-        </TypistLoop>
+
+        <Typist startDelay={100} cursor={{ blink: true }}>
+          {skills.join(", ")}
+          {/* <Typist.Backspace count={text.length} delay={500} /> */}
+        </Typist>
       </div>
     </div>
   )

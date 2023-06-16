@@ -1,7 +1,7 @@
 import { MarkdownRemark } from "@main/graphql-types"
 import { Link } from "gatsby"
 import React from "react"
-import { animated, useSpring } from "react-spring"
+import { animated, useSpring } from "@react-spring/web"
 
 /* eslint-disable react/no-danger */
 export const WorkBody: React.FC<{

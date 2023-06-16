@@ -1,7 +1,7 @@
 import { MarkdownRemark } from "@main/graphql-types"
 import { Link } from "gatsby"
 import React, { CSSProperties } from "react"
-import { animated, useSpring } from "react-spring"
+import { animated, useSpring } from "@react-spring/web"
 
 export const ProjectsBody: React.FC<{
   /** The Post to render */

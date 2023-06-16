@@ -6,9 +6,9 @@ start: 2019-05-01T23:46:37.121Z
 end: 2019-09-01T23:46:37.121Z
 ---
 
-Founded in 2014, [MagicLinks](https://www.magiclinks.com/) is the fastest-growing video influencer platform, powering social commerce for tens of thousands of the world's leading digital artists. 
+Founded in 2014, [MagicLinks](https://www.magiclinks.com/) is the fastest-growing video influencer platform, powering social commerce for tens of thousands of the world's leading digital artists.
 
-###### Working as a Product and Project Manger I:
+###### Working as a Product and Project Manger, I:
 
 - Contributed to over 50 internal projects and led 10 through from beginning to end.
 
